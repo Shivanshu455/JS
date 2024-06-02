@@ -1,0 +1,43 @@
+// Create a variable to hold your NFTs
+let nftCollection = [];
+
+// We define a function named NFT and take some parameters
+// Create an NFT object using the parameters
+// and adds it in the 'NFT Collection' array
+function NFT(_name, _eyeColour, _sports, _books) {
+    let nft = {
+        "name": _name,
+        "eyeColour": _eyeColour,
+        "sports": _sports,
+        "books": _books
+    };
+    nftCollection.push(nft);
+    console.log("NFT: " + _name);
+}
+
+// Let's create a listnfts that 'loops' throung the 'nftcollection' array
+// and we try to print their metadata by using console
+function listNFTs() {
+    for(let i = 0; i < nftCollection.length; i++) {
+        console.log("\nID: \t\t " + (i + 1));
+        console.log("Name: \t\t " + nftCollection[i].name);
+        console.log("Eye Colour: \t " + nftCollection[i].eyeColour);
+        console.log("Sports: \t " + nftCollection[i].sports);
+        console.log("Books: \t\t " + nftCollection[i].books);
+    }
+}
+
+// This simply print the total number of NFTs in the collection
+function getTotalSupply() {
+    console.log("\nTotal NFTs: " + nftCollection.length);
+}
+
+// Let's start calling 'NFT' function 
+NFT("Shivanshu", "Black", "Cricket", "Comic Books");
+NFT("Shivam", "Brown", "Football", "The Trail");
+NFT("Pranv", "Grey", "E-sports", "The Ice and Fire");
+NFT("Raman", "Black", "Cricket", "Kingslayer");
+
+// Listing all NFTs and display total supply
+listNFTs();
+getTotalSupply();
